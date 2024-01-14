@@ -5,6 +5,8 @@ export interface HomeType {
     plaqe: number
     addresss: string
     age: number
+    inside: boolean,
+    outside: boolean,
 }
 const useGetHomes = () => {
     const [data, setData] = useState<any>()

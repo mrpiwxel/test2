@@ -10,16 +10,19 @@ export const Home = () => {
     useEffect(() => {
         setHomes(data)
         if(data){
-            setSelctedHome(data[2].id)
+            setSelctedHome(data[0].id)
         }
     }, [data])
-    useEffect(() => {
-        if (homedata) {
-            alert(`${homedata?.plaqe} , ${homedata?.addresss}`)
-        }
-    }, [homedata])
     return (
         <div>
+                <button
+                disabled={
+                    !homedata?.inside && !homedata?.outside
+                }
+                >
+                {homedata?.inside && "inside" }/
+                {homedata?.outside && "outside"}
+            </button>
             {homes &&
                 homes.map((el, index) =>
                     <div
