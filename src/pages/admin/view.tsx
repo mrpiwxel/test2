@@ -7,12 +7,7 @@ export const Admin = () => {
     const [data, setData] = useState<HomeType>()
     useEffect(()=>{
         setData(state)
-        console.log(state);  
     }, [state])
-    useEffect(()=>{
-        console.log(data);
-        
-    }, [data])
   return (
     <div>Admin <br />
           
