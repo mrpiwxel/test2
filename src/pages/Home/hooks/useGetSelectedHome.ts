@@ -6,9 +6,8 @@ const useGetSelectedHome = (id: number) => {
     const [homedata, setData] = useState<HomeType>()
     function getHome() {
         try {
-            axios.get(`https://65a414c7a54d8e805ed46a69.mockapi.io/homes/${id}`).then((res) => {
-
-                console.log(res);
+            axios.get(`https://65aaa21d081bd82e1d977017.mockapi.io/homes/${id}`).then((res) => {
+                console.log(res.data);
                 setData(res.data)
             })
 
@@ -19,11 +18,8 @@ const useGetSelectedHome = (id: number) => {
 
     }
     useEffect(() => {
-        if (id !== 0) {
+        if (id) {
             getHome()
-        } else {
-            console.log("not call gethome");
-
         }
     }, [id])
     return { homedata }
